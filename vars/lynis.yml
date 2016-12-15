@@ -1,0 +1,13 @@
+---
+# https://github.com/CISOfy/lynis/releases
+lynis_version: '2.3.4'
+lynis_name: 'lynis-{{ lynis_version }}'
+
+lynis_tarball_url: 'https://cisofy.com/files/{{ lynis_name }}.tar.gz'
+lynis_tarball_checksum: 'effa5b93d1e6c284ea6317a87f041a8a24428c9acc26e00a29844bf161a3267f'
+
+lynis_tarball_unpackdest: '/opt'
+lynis_tarball_unpackdest_dir: '{{ lynis_tarball_unpackdest }}/lynis'
+lynis_tarball_dest: '{{ lynis_tarball_unpackdest_dir }}/{{ lynis_name }}.tar.gz'
+
+lynis_use_packages: no

@@ -1,0 +1,9 @@
+---
+- name: lynis
+  hosts: all
+  user: root
+  become: true
+  roles:
+  - lynis
+  vars_files:
+  - vars/lynis.yml

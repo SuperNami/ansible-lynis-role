@@ -1,0 +1,9 @@
+---
+- name: install aha
+  apt: name=aha
+       update_cache=yes
+       state=present
+
+
+- name: run and save audit
+  command: ./lynis audit system --verbose | aha --black > results.html chdir=/opt/lynis

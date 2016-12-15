@@ -1,0 +1,7 @@
+---
+- name: install lynis from apt
+  apt: name=lynis
+       state=present
+       force=no
+       install_recommends=no
+       update_cache=yes

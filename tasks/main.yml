@@ -1,0 +1,9 @@
+---
+- include: install/repository.yml
+  tags: lynis_repository
+
+- include: install/manual.yml
+  tags: lynis_manual
+
+- include: run/audit-system.yml
+  tags: lynis_audit_system

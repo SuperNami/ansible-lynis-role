@@ -1,0 +1,6 @@
+---
+- name: hide postfix version
+  lineinfile:
+    dest: /etc/postfix/main.cf
+    regexp: "^(#)?smtpd_banner"
+    line: "smtpd_banner = $myhostname ESMTP"

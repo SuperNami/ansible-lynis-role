@@ -1,0 +1,27 @@
+---
+- name: create directories
+  file: dest={{ lynis_tarball_unpackdest_dir }}
+        recurse=yes
+        state=directory
+        owner=root
+        group=root
+
+
+- name: download latest stable version
+  get_url: sha256sum={{ lynis_tarball_checksum }}
+           url={{ lynis_tarball_url }}
+           dest={{ lynis_tarball_dest }}
+           force=no
+           validate_certs=yes
+           backup=yes
+
+
+- name: unpack
+  unarchive: dest={{ lynis_tarball_unpackdest }}
+             src={{ lynis_tarball_dest }}
+             copy=no
+
+
+- name: remove tarball
+  file: dest={{ lynis_tarball_dest }}
+        state=absent
